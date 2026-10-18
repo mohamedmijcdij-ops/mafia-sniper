@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MAFIA SNIPER</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--c1:#22d3ee;--c2:#e879f9;--c3:#a3e635;--c4:#fbbf24;--up:#34d399;--dn:#fb7185;--tx:#f6f3ff;--mu:#b3acd6;--gl:rgba(255,255,255,.07);--bd:rgba(255,255,255,.14);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{scroll-padding-top:env(safe-area-inset-top,0px);background:#0a0820}
+body{margin:0;background:#0a0820;color:var(--tx);font-family:Cairo,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.55;overflow-x:hidden}
+#bgf{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px) 0 0/100% 44px,linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px) 0 0/44px 100%}
+.bl{position:absolute;width:60vmax;height:60vmax;border-radius:50%;will-change:transform;animation:fl 18s ease-in-out infinite alternate}
+.b1{top:-26vmax;right:-22vmax;background:radial-gradient(circle,rgba(34,211,238,.42),transparent 62%)}
+.b2{bottom:-30vmax;left:-26vmax;background:radial-gradient(circle,rgba(232,121,249,.4),transparent 62%);animation-duration:22s}
+@keyframes fl{to{transform:translate3d(8vmax,6vmax,0) scale(1.15)}}
+#bars{position:absolute;left:0;right:0;bottom:0;height:34vh;display:flex;align-items:flex-end;gap:3%;padding:0 3%;opacity:.2}
+#bars i{will-change:transform;flex:1;height:var(--h);background:var(--k);border-radius:3px;transform-origin:bottom;animation:bar var(--s) ease-in-out infinite alternate}
+@keyframes bar{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+.pt{position:absolute;bottom:-10px;width:var(--z);height:var(--z);border-radius:50%;background:var(--k);opacity:.7;animation:rise var(--s) linear infinite}
+@keyframes rise{to{transform:translateY(-110vh) translateX(var(--x));opacity:0}}
+body.ps #bgf *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){#bgf *{animation:none!important}}
+#wm{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='150'%3E%3Ctext x='10' y='85' font-size='20' font-family='Arial' font-weight='bold' fill='%23ffffff' transform='rotate(-25 130 75)'%3EMAFIA - @MAFIA_LORD2%3C/text%3E%3C/svg%3E")}
+main{max-width:760px;margin:auto;padding:8px 12px 110px}
+.ttl{font:900 30px Orbitron,sans-serif;letter-spacing:4px;margin:2px 0;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lg{font:900 13px Orbitron,sans-serif;letter-spacing:8px;color:var(--c4)}
+.hero{text-align:center;padding:6px 0 12px}.em{width:74px;height:74px;animation:sp 14s linear infinite}
+.sb{color:var(--mu);font-size:13px;margin:2px 0 8px}
+.tl{display:inline-block;padding:7px 18px;border-radius:999px;color:#fff;text-decoration:none;font-weight:700;direction:ltr;background:linear-gradient(135deg,#8b5cf6,#e879f9)}
+.tab{display:none}.tab.on{display:block;animation:up .45s ease both}@keyframes up{from{opacity:0;transform:translateY(18px)}}
+.c{position:relative;background:rgba(30,24,72,.82);border:1px solid var(--bd);border-radius:22px;padding:14px;margin-bottom:12px;box-shadow:0 8px 24px rgba(0,0,0,.3);overflow:hidden;animation:up .5s ease both}
+.c::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3))}
+h2{margin:0 0 10px;font-size:15px;font-weight:900;display:flex;align-items:center;gap:8px}
+h2::before{content:"";width:9px;height:9px;border-radius:3px;background:linear-gradient(135deg,var(--c1),var(--c2))}
+h2::after{content:"MAFIA";margin-inline-start:auto;font:700 9px Orbitron,sans-serif;letter-spacing:3px;color:var(--c4);opacity:.7}
+.seg{display:flex;gap:6px;margin-bottom:10px}.seg button{flex:1;border:1px solid var(--bd);background:var(--gl);color:var(--mu);border-radius:14px;padding:8px;font:900 13px Cairo,sans-serif;cursor:pointer;position:relative;overflow:hidden;transition:.25s}
+.seg button.on{background:linear-gradient(135deg,#22d3ee,#8b5cf6);color:#fff;border-color:transparent}body.real .seg button.on{background:linear-gradient(135deg,#fbbf24,#fb7185);color:#2a0b0b}
+.dash{display:flex;gap:12px;align-items:center}
+.ring{--p:50;flex:none;width:128px;height:128px;border-radius:50%;background:conic-gradient(var(--c1),var(--c2),var(--c3) calc(var(--p)*1%),rgba(255,255,255,.1) 0);display:grid;place-items:center;position:relative;box-shadow:0 0 28px rgba(34,211,238,.35)}
+.ring::before{content:"";position:absolute;inset:9px;border-radius:50%;background:#120e30}
+.ring div{position:relative;text-align:center;line-height:1.25}.ring span,.ring small{display:block;font-size:10.5px;color:var(--mu)}.ring b{font:900 19px Orbitron,sans-serif}
+.kg{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.k{background:var(--gl);border:1px solid var(--bd);border-radius:14px;padding:7px 10px}.k span{font-size:10.5px;color:var(--mu);display:block}.k b{font-size:15px}
+.nx{display:flex;align-items:center;gap:10px;margin-top:10px;padding:9px 12px;border-radius:14px;background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(232,121,249,.18));border:1px solid var(--bd)}.nx b{font:900 17px Orbitron,sans-serif;color:var(--c4)}.nx small{color:var(--mu);margin-inline-start:auto}
+.clk{display:flex;align-items:center;gap:14px}.cr{--p:0;flex:none;width:92px;height:92px;border-radius:50%;background:conic-gradient(var(--c3) calc(var(--p)*1%),rgba(255,255,255,.1) 0);display:grid;place-items:center;position:relative}.cr::before{content:"";position:absolute;inset:7px;border-radius:50%;background:#120e30}
+.cr b{position:relative;font:900 20px Orbitron,sans-serif}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sl{aspect-ratio:1/1;border:2px dashed rgba(255,255,255,.28);border-radius:18px;display:grid;place-items:center;text-align:center;font-size:12.5px;color:var(--mu);overflow:hidden;position:relative;cursor:pointer;background:var(--gl);transition:transform .2s,border-color .2s}
+.sl:active{transform:scale(.96)}.sl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:up .4s}.sl input{display:none}.sl.has span{display:none}.sl.has{border-style:solid;border-color:var(--c3)}
+.row{display:flex;gap:8px;margin:10px 0}.row>*{flex:1}.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.btn,.seg button,.tb,.tl,.sl{position:relative;overflow:hidden}
+.btn{width:100%;border:0;border-radius:16px;padding:14px;font:900 16px Cairo,sans-serif;cursor:pointer;color:#150a33;background:linear-gradient(120deg,var(--c1),var(--c2),var(--c3));transition:transform .15s;box-shadow:0 6px 16px rgba(34,211,238,.25)}
+.btn:active{transform:scale(.95)}.btn:disabled{opacity:.4}
+.btn.s{background:var(--gl);color:var(--tx);border:1px solid var(--bd);font-size:13px;padding:10px;box-shadow:none}.btn.w{background:linear-gradient(135deg,#6ee7b7,#10b981);color:#032014;font-size:13.5px}.btn.l{background:linear-gradient(135deg,#fda4af,#f43f5e);color:#2a0310;font-size:13.5px}.btn.dg{background:linear-gradient(135deg,#7f1d1d,#be123c);color:#fff;font-size:13px;padding:10px}
+.rp{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:rp .6s ease-out forwards;pointer-events:none}@keyframes rp{to{transform:scale(1);opacity:0}}
+.ow{position:relative;width:190px;height:190px;margin:6px auto 8px}
+.orb{position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;align-content:center;color:#fff;animation:pu 2.2s ease-in-out infinite,pop .7s cubic-bezier(.2,1.6,.4,1)}
+.orb::before{content:"";position:absolute;inset:-12px;border-radius:50%;border:3px solid currentColor;animation:rg 2.2s infinite}
+.orb.CALL{background:radial-gradient(circle at 35% 28%,#6ee7b7,#059669 75%);box-shadow:0 0 60px rgba(52,211,153,.7);color:#34d399}
+.orb.PUT{background:radial-gradient(circle at 35% 28%,#fda4af,#e11d48 75%);box-shadow:0 0 60px rgba(251,113,133,.7);color:#fb7185}
+.orb b{font-size:30px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}.orb .ar{font-size:44px;line-height:1;color:#fff;animation:bn 1s ease-in-out infinite alternate}
+@keyframes bn{to{transform:translateY(-6px)}}@keyframes pu{50%{transform:scale(1.05)}}@keyframes pop{from{transform:scale(0) rotate(-90deg)}}@keyframes rg{from{transform:scale(.92);opacity:.7}to{transform:scale(1.3);opacity:0}}@keyframes sp{to{transform:rotate(360deg)}}
+.bu{position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4px;border-radius:50%;background:var(--bc);animation:bs .9s ease-out forwards}@keyframes bs{to{transform:rotate(var(--a)) translateX(var(--d)) scale(.2);opacity:0}}
+.mk{text-align:center;font:900 19px Orbitron,Cairo,sans-serif;color:var(--c1);margin-bottom:2px;text-shadow:0 0 14px rgba(34,211,238,.5)}.mk small{font:400 12px Cairo,sans-serif;color:var(--mu);margin-inline-start:8px;text-shadow:none}
+.pw{display:flex;justify-content:space-between;font-weight:900;font-size:14px;margin-top:2px}.pw b{font:900 16px Orbitron,sans-serif;color:var(--c4)}
+.bar{height:10px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin:4px 0 8px}.bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,#fb7185,#fbbf24,#34d399);animation:wd 1s ease-out}@keyframes wd{from{width:0}}
+.cd{text-align:center;font-weight:900;font-size:17px;padding:9px;border-radius:14px;background:rgba(34,211,238,.15);border:1px solid var(--c1);margin:4px 0 8px}.cd.go{background:rgba(52,211,153,.22);border-color:var(--up);animation:pu .8s infinite}.cd.late{background:rgba(251,113,133,.18);border-color:var(--dn);font-size:14px}
+.stp{display:flex;gap:6px;margin:10px 0}.stp div{flex:1;text-align:center;background:var(--gl);border:1px solid var(--bd);border-radius:14px;padding:8px 4px}.stp b{display:block;font:900 17px Orbitron,sans-serif;color:var(--c3);line-height:1.2}.stp span{display:block;font-weight:900;font-size:13px}.stp small{color:var(--mu);font-size:11px}
+.fcw{margin:8px 0}.fc{width:100%;height:auto;display:block;border-radius:14px;margin-top:4px}
+.nxc{animation:form .9s .35s cubic-bezier(.2,1.4,.4,1) both;transform-box:fill-box;transform-origin:center bottom}@keyframes form{from{transform:scaleY(0);opacity:0}}
+.frm{animation:bk 1.3s ease-in-out infinite alternate}@keyframes bk{to{opacity:.6}}
+.al{padding:9px 11px;border-radius:14px;margin-top:8px;font-size:13.5px;background:rgba(251,191,36,.16);border:1px solid var(--c4)}.al.bad{background:rgba(251,113,133,.18);border-color:var(--dn);animation:sk .5s}@keyframes sk{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.sc{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12.5px;white-space:nowrap}th,td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.1);text-align:center}th{color:var(--mu)}
+.pos{color:var(--up)}.neg{color:var(--dn)}.mu{color:var(--mu);font-size:12.5px}.hide{display:none!important}
+label{font-size:11.5px;color:var(--mu);display:block}input[type=number]{width:100%;padding:9px;border:1px solid var(--bd);border-radius:12px;background:var(--gl);color:var(--tx);font:inherit}
+.cf{position:absolute;bottom:-30px;font-style:normal;font-size:24px;animation:cf 1.6s ease-out forwards}@keyframes cf{to{transform:translate(var(--x),-100vh) rotate(360deg);opacity:0}}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;justify-content:space-around;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:rgba(14,10,40,.97);border-top:1px solid var(--bd)}
+.tb{flex:1;max-width:140px;border:0;background:none;color:var(--mu);font:700 11.5px Cairo,sans-serif;padding:6px;border-radius:16px;cursor:pointer;transition:.3s}.tb b{display:block;font-size:20px;transition:transform .3s}.tb.on{color:#fff;background:linear-gradient(135deg,rgba(34,211,238,.35),rgba(232,121,249,.35))}.tb.on b{transform:translateY(-3px) scale(1.2)}
+#spl,#lock,#scan{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;background:radial-gradient(500px 400px at 50% 25%,rgba(232,121,249,.35),transparent 70%),radial-gradient(500px 400px at 80% 80%,rgba(34,211,238,.28),transparent 70%),#0a0820}
+#spl{z-index:100;transition:opacity .6s,transform .6s}#spl.out{opacity:0;transform:scale(1.08);pointer-events:none}#spl h2,#lock h2{display:block;font-size:26px;margin:12px 0 4px}#spl h2::before,#spl h2::after,#lock h2::before,#lock h2::after{display:none}
+#spl .em{width:120px;height:120px}#lock{z-index:200;display:none}body.dn #lock{display:flex}body.lk main,body.lk nav{display:none}
+#scan{z-index:90;display:none;background:rgba(10,8,32,.92)}#scan.on{display:flex}
+.rad{width:200px;height:200px;margin:auto;border-radius:50%;border:2px solid var(--c1);background:conic-gradient(from 0deg,rgba(34,211,238,.7),rgba(232,121,249,.4) 20%,transparent 40%);animation:sp 1.5s linear infinite;box-shadow:0 0 50px rgba(34,211,238,.5)}
+.ft{text-align:center}.fn{font-size:12px;color:var(--mu);margin-top:8px}
+@media(max-width:420px){.dash{flex-direction:column}.ring{width:150px;height:150px}.kg{width:100%}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#e879f9"/><stop offset="1" stop-color="#a3e635"/></linearGradient></defs><symbol id="em" viewBox="0 0 100 100"><g fill="none" stroke="url(#gg)" stroke-width="3"><circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="30" stroke-dasharray="4 5"/><path d="M50 2v26M50 72v26M2 50h26M72 50h26"/></g><path d="M50 40l10 10-10 10-10-10z" fill="url(#gg)"/></symbol></svg>
+<div id="bgf"><i class="bl b1"></i><i class="bl b2"></i><div id="bars"></div></div>
+<div id="wm"></div>
+<div id="spl"><div><svg class="em"><use href="#em"/></svg><div class="lg">MAFIA</div><h2 class="ttl" style="font-size:24px;letter-spacing:0">المصمم مافيا يرحب بكم</h2><p class="sb">Welcome — Designed by MAFIA</p><a class="tl" href="https://t.me/MAFIA_LORD2" target="_blank" rel="noopener">للتواصل: @MAFIA_LORD2</a><br><button class="btn" id="spb" style="width:auto;padding:12px 48px;margin-top:20px">دخول 🚀</button></div></div>
+<div id="lock" style="display:none"></div>
+<div id="scan"><div><div class="rad"></div><p id="scT" style="margin-top:20px;font-weight:900;font-size:17px;color:var(--c1)">جارٍ التحليل…</p></div></div>
+<main>
+<header class="hero"><svg class="em"><use href="#em"/></svg><div class="lg">MAFIA</div><h1 class="ttl">SNIPER</h1><div class="sb">Designed by MAFIA • المصمم مافيا</div><a class="tl" href="https://t.me/MAFIA_LORD2" target="_blank" rel="noopener">للتواصل: @MAFIA_LORD2</a></header>
+
+<section class="tab on" id="t0">
+<div class="c"><h2>لوحة الحساب</h2>
+<div class="seg" id="acc"><button data-a="demo" class="on">🧪 حساب تجريبي</button><button data-a="real">💰 حساب حقيقي</button></div>
+<div class="dash"><div class="ring" id="ring"><div><span>الرصيد</span><b id="kB">-</b><small id="kS">-</small></div></div>
+<div class="kg"><div class="k"><span>صافي اليوم</span><b id="kD">-</b></div><div class="k"><span>صافي الشهر</span><b id="kM">-</b></div><div class="k"><span>الإجمالي (كل الفترات)</span><b id="kA">-</b></div><div class="k"><span>خسائر متتالية</span><b id="kC">-</b></div></div></div>
+<div class="nx"><span>مبلغ الصفقة التالية</span><b id="nxA">-</b><small id="nxW"></small></div>
+<div id="perf" class="al" style="display:none"></div><div id="alerts"></div>
+<button class="btn s" id="rst" style="margin-top:10px">🔄 ريستارت (تصفير الحساب الحالي)</button></div>
+
+<div class="c"><h2>الشمعة القادمة (5 دقائق)</h2><div class="clk"><div class="cr" id="clkR"><b id="clk">--:--</b></div><div><div style="font-weight:900">تفتح الشمعة القادمة بعد</div><div class="mu">حسب ساعة جهازك</div></div></div></div>
+
+<div class="c"><h2>الشارتات (فريم 5 دقائق)</h2>
+<div class="g2" id="sl"></div>
+<div class="mu" style="margin:10px 0 4px">مستوى التحليل</div><div class="seg" id="lv"><button data-l="max" class="on">🔥 أقوى</button><button data-l="bal">⚖️ متوازن</button><button data-l="fast">⚡ سريع</button></div>
+<div id="err" class="al bad hide"></div>
+<button class="btn" id="go" style="margin-top:10px" disabled>🎯 حلّل الصورتين</button></div>
+
+<div class="c hide" id="sg"><h2>الإشارة</h2><div id="sig"></div></div>
+</section>
+
+<section class="tab" id="t1"><div class="c"><h2 id="hT">سجل النتائج</h2><div id="st" class="g3" style="margin-bottom:10px"></div><div class="sc"><table><thead><tr><th>#</th><th>الوقت</th><th>السوق</th><th>الاتجاه</th><th>المبلغ</th><th>النتيجة</th><th>الصافي</th><th>الرصيد</th><th>خسائر متتالية</th></tr></thead><tbody id="tb"></tbody></table></div><div id="em0" class="mu">لا توجد صفقات مسجلة بعد.</div></div></section>
+
+<section class="tab" id="t2"><div class="c"><h2>الإعدادات</h2><div class="g2" id="se"></div><div class="row"><button class="btn s" id="sv">💾 حفظ الإعدادات</button></div><div id="sm" class="mu"></div></div>
+<div class="c"><h2>ضبط المصنع</h2><button class="btn dg" id="fr">⚠️ ضبط المصنع — يمسح كل شيء</button><div class="mu" style="margin-top:6px">يمسح الحسابين (التجريبي والحقيقي) والسجل والإعدادات والإشارة الحالية.</div></div></section>
+
+<div class="c ft"><div class="lg">MAFIA</div><div>تصميم المصمم مافيا • Designed by MAFIA</div><div style="margin:8px 0"><a class="tl" href="https://t.me/MAFIA_LORD2" target="_blank" rel="noopener">للتواصل: @MAFIA_LORD2</a></div><div class="fn">© MAFIA — جميع الحقوق محفوظة • أداة مساعدة ولا تضمن الربح</div></div>
+</main>
+<nav><button class="tb on" data-t="t0"><b>🏠</b>الرئيسية</button><button class="tb" data-t="t1"><b>📊</b>السجل</button><button class="tb" data-t="t2"><b>⚙️</b>الإعدادات</button></nav>
+<script>
+const $=i=>document.getElementById(i),KEY='msn_v4',MD='claude-fable-5-1',TF=300000;
+const SD={base:1000,pay:80,mode:1,rec:.5,mult:1.7,w1:500,w2:800,balW:5000,balS:4000,maxCons:6};
+const LB={bal0:'الرصيد الابتدائي (الحساب الحالي)',base:'مبلغ الدخول الأساسي',pay:'نسبة العائد %',mode:'نظام الدخول (0 ثابت، 1 تعويض، 2 مضاعف)',rec:'نسبة تعويض الدين (0.5 نصف، 1 كامل، 1.5 كامل ونصف)',mult:'معامل المضاعفة',w1:'تنبيه خسارة اليوم',w2:'تنبيه شديد لخسارة اليوم',balW:'تحذير عند الرصيد',balS:'تحذير شديد عند الرصيد',maxCons:'تحذير عند خسائر متتالية'};
+const SK=['bal0',...Object.keys(SD)];
+const fresh=()=>({set:{...SD},acc:'demo',lvl:'max',accs:{demo:{bal0:10000,trades:[],arch:0},real:{bal0:10000,trades:[],arch:0}},pending:null});
+let S=fresh();
+try{const o=JSON.parse(localStorage.getItem(KEY)||'null');if(o){S.set={...SD,...o.set};S.acc=o.acc==='real'?'real':'demo';S.lvl=['max','bal','fast'].includes(o.lvl)?o.lvl:'max';for(const k of['demo','real'])if(o.accs&&o.accs[k])S.accs[k]={bal0:+o.accs[k].bal0||10000,trades:o.accs[k].trades||[],arch:+o.accs[k].arch||0};S.pending=o.pending&&o.pending.target?o.pending:null}}catch(e){}
+const sv=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const A=()=>S.accs[S.acc];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>(Math.round(n*100)/100).toLocaleString('en-US'),cls=n=>n>0?'pos':n<0?'neg':'';
+const sum=a=>a.reduce((x,t)=>x+t.pnl,0);
+const bal=()=>A().bal0+sum(A().trades);
+const dayNet=()=>sum(A().trades.filter(t=>new Date(t.ts).toDateString()===new Date().toDateString()));
+const cons=()=>{const T=A().trades;let c=0;for(let i=T.length-1;i>=0;i--){if(T[i].res==='loss')c++;else if(T[i].res==='win')break}return c};
+function nxt(){const s=S.set,b=bal(),p=s.pay/100;let debt=0,last=null;for(const t of A().trades){if(t.res==='loss')debt+=t.amt;else if(t.res==='win')debt=Math.max(0,debt-t.pnl);if(t.res!=='draw')last=t}
+ let a=s.base,w='المبلغ الأساسي';
+ if(s.mode===1&&debt>0){a=s.base+debt*s.rec/p;w='تعويض '+fmt(debt)}
+ else if(s.mode===2&&debt>0&&last){a=last.res==='loss'?last.amt*s.mult:last.amt;w=last.res==='loss'?'×'+s.mult:'تثبيت'}
+ if(a>b)a=b;return{a:Math.max(0,Math.floor(a)),w}}
+function sn(id,v){const e=$(id);e.textContent=(v>0?'+':'')+fmt(v);e.className=cls(v)}
+function tw(id,to){const e=$(id),from=+e.dataset.v||0;e.dataset.v=to;const t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/700),v=from+(to-from)*(1-Math.pow(1-k,3));e.textContent=fmt(v);if(k<1)requestAnimationFrame(f)})(t0)}
+function perf(){const e=$('perf'),T=A().trades.filter(t=>t.res==='win'||t.res==='loss'),n=T.length,w=T.filter(t=>t.res==='win').length,be=1/(1+S.set.pay/100),r=n?w/n:0,me=n?1.96*Math.sqrt(r*(1-r)/n):0;let m,c='al';
+ if(n<10)m='📊 النجاح '+(n?(r*100).toFixed(0)+'%':'—')+' ('+w+'/'+n+') • التعادل '+(be*100).toFixed(1)+'% • يحتاج 10 صفقات';
+ else if(r+me<be){m='⛔ النجاح '+(r*100).toFixed(1)+'% ('+w+'/'+n+') تحت التعادل '+(be*100).toFixed(1)+'% — بيخسر';c+=' bad'}
+ else if(r-me>be)m='✅ النجاح '+(r*100).toFixed(1)+'% ('+w+'/'+n+') فوق التعادل '+(be*100).toFixed(1)+'%';
+ else m='⚠️ النجاح '+(r*100).toFixed(1)+'% ('+w+'/'+n+') قرب التعادل '+(be*100).toFixed(1)+'% — غير حاسم';
+ e.className=c;e.textContent=m;e.style.display=''}
+// ---- candle drawing (chart + last-3 picture)
+function drawChart(ch,name){try{if(!ch)return'';const all=[...ch.cl,ch.g,ch.f,ch.n],m=ch.cl.length+2,mn=Math.min(...all.map(c=>c.l),ch.s==null?1e9:ch.s),mx=Math.max(...all.map(c=>c.h),ch.r==null?-1e9:ch.r);
+ const W=340,H=200,pt=22,pb=24,y=v=>H-pb-(v-mn)/((mx-mn)||1)*(H-pt-pb),st=(W-40)/(m-1),x=i=>20+i*st,bw=Math.min(14,st*.58);
+ let g='';for(let i=1;i<5;i++){const yy=pt+i*(H-pt-pb)/5;g+=`<line x1='0' x2='${W}' y1='${yy}' y2='${yy}' stroke='rgba(255,255,255,.07)'/>`}
+ const lv=(v,t,c)=>v==null?'':`<line x1='0' x2='${W}' y1='${y(v)}' y2='${y(v)}' stroke='${c}' stroke-dasharray='4 4' opacity='.7'/><text x='4' y='${y(v)-3}' fill='${c}' font-size='9'>${t}</text>`;
+ const cd=(c,i)=>{const u=c.g===undefined?c.c>=c.o:c.g,k=u?'#34d399':'#fb7185',t=y(Math.max(c.o,c.c)),b=y(Math.min(c.o,c.c));return `<line x1='${x(i)}' x2='${x(i)}' y1='${y(c.h)}' y2='${y(c.l)}' stroke='${k}' stroke-width='2'/><rect x='${x(i)-bw/2}' y='${t}' width='${bw}' height='${Math.max(2,b-t)}' rx='2' fill='${k}'/>`};
+ const gh=(c,i)=>`<rect x='${x(i)-bw/2-3}' y='${y(c.h)-3}' width='${bw+6}' height='${y(c.l)-y(c.h)+6}' rx='5' fill='none' stroke='#fff' stroke-opacity='.5' stroke-dasharray='3 3'/>`;
+ const n=ch.n,nk=n.c>=n.o?'#34d399':'#fb7185',fi=m-2,ni=m-1;
+ return `<svg viewBox='0 0 ${W} ${H}' class='fc' direction='ltr'><rect width='${W}' height='${H}' rx='14' fill='rgba(8,6,30,.7)'/><text x='${W/2}' y='13' text-anchor='middle' fill='#22d3ee' font-size='11' font-weight='900'>${esc(name)}</text>${g}${lv(ch.r,'R','#fbbf24')}${lv(ch.s,'S','#22d3ee')}${ch.cl.map((c,i)=>cd(c,i)).join('')}<g class='frm'>${cd(ch.f,fi)}${gh(ch.g,fi)}</g><line x1='${x(ni)-st/2}' x2='${x(ni)-st/2}' y1='${pt}' y2='${H-pb}' stroke='rgba(255,255,255,.25)' stroke-dasharray='3 4'/><g class='nxc'><rect x='${x(ni)-bw/2-4}' y='${Math.min(y(n.h),y(n.l))-4}' width='${bw+8}' height='${Math.abs(y(n.l)-y(n.h))+8}' rx='6' fill='${nk}' opacity='.18'/>${cd(n,ni)}</g><text x='${x(fi)}' y='${H-8}' text-anchor='middle' fill='#e5e7eb' font-size='9'>الحالية</text><text x='${x(ni)}' y='${H-8}' text-anchor='middle' fill='${nk}' font-size='10' font-weight='700'>المتوقعة</text><text x='8' y='${H-8}' fill='#b3acd6' font-size='9'>آخر ${ch.cl.length} شموع حقيقية</text></svg>`}catch(e){return''}}
+function drawTri(ch,name,up){try{if(!ch)return'';const t={a:ch.cl[ch.cl.length-1],g:ch.g,f:ch.f,n:ch.n},all=[t.a,t.g,t.f,t.n],mn=Math.min(...all.map(c=>c.l)),mx=Math.max(...all.map(c=>c.h)),W=340,H=190,pt=26,pb=44,y=v=>H-pb-(v-mn)/((mx-mn)||1)*(H-pt-pb),xs=[62,170,278],bw=34;
+ const bd=(c,x,o)=>{const k=c.g?'#34d399':'#fb7185',tp=y(Math.max(c.o,c.c)),bt=y(Math.min(c.o,c.c));return `<line x1='${x}' x2='${x}' y1='${y(c.h)}' y2='${y(c.l)}' stroke='${k}' stroke-width='3' opacity='${o}'/><rect x='${x-bw/2}' y='${tp}' width='${bw}' height='${Math.max(3,bt-tp)}' rx='4' fill='${k}' opacity='${o}'/>`};
+ const gh=(c,x)=>{const tp=y(Math.max(c.o,c.c)),bt=y(Math.min(c.o,c.c));return `<line x1='${x}' x2='${x}' y1='${y(c.h)}' y2='${y(c.l)}' stroke='#fff' stroke-opacity='.55' stroke-dasharray='3 3'/><rect x='${x-bw/2-3}' y='${tp-1}' width='${bw+6}' height='${Math.max(3,bt-tp)+2}' rx='5' fill='none' stroke='#fff' stroke-opacity='.55' stroke-dasharray='3 3'/>`};
+ const nk=up?'#34d399':'#fb7185',lb=(x,a,b,c)=>`<text x='${x}' y='${H-24}' text-anchor='middle' fill='${c||'#e5e7eb'}' font-size='10' font-weight='700'>${a}</text><text x='${x}' y='${H-10}' text-anchor='middle' fill='#b3acd6' font-size='9'>${b}</text>`;
+ return `<svg viewBox='0 0 ${W} ${H}' class='fc' direction='ltr'><rect width='${W}' height='${H}' rx='14' fill='rgba(8,6,30,.7)'/><text x='8' y='15' fill='#22d3ee' font-size='11' font-weight='900'>${esc(name)}</text>${bd(t.a,xs[0],1)}${gh(t.g,xs[1])}${bd(t.f,xs[1],.9)}<g class='nxc'><rect x='${xs[2]-bw/2-8}' y='${Math.min(y(t.n.h),y(t.n.l))-6}' width='${bw+16}' height='${Math.abs(y(t.n.l)-y(t.n.h))+12}' rx='8' fill='${nk}' opacity='.18'/>${bd(t.n,xs[2],1)}</g><text x='${xs[2]}' y='15' text-anchor='middle' fill='${nk}' font-size='11' font-weight='900'>${up?'▲ شراء':'▼ بيع'}</text>${lb(xs[0],'مكتملة','حقيقية')}${lb(xs[1],'الحالية','مكتملة بالتوقع')}${lb(xs[2],'المتوقعة','الإشارة عليها',nk)}</svg>`}catch(e){return''}}
+// ---- render
+let fr=false;
+function render(){
+ document.body.classList.toggle('real',S.acc==='real');document.querySelectorAll('#acc button').forEach(b=>b.classList.toggle('on',b.dataset.a===S.acc));document.querySelectorAll('#lv button').forEach(b=>b.classList.toggle('on',b.dataset.l===S.lvl));
+ const s=S.set,B=bal(),C=cons(),now=new Date(),T=A().trades,d=dayNet(),cur=sum(T);
+ const mo=sum(T.filter(t=>{const x=new Date(t.ts);return x.getMonth()===now.getMonth()&&x.getFullYear()===now.getFullYear()}));
+ tw('kB',B);$('kS').textContent='البداية '+fmt(A().bal0);$('ring').style.setProperty('--p',Math.max(0,Math.min(100,B/(A().bal0*2)*100)));
+ sn('kD',d);sn('kM',mo);sn('kA',A().arch+cur);$('kC').textContent=C;perf();
+ const al=[],L2=Math.max(0,-d);
+ if(B<=s.balS)al.push(['bad','🚨 تحذير شديد جدًا: الرصيد '+fmt(B)]);else if(B<=s.balW)al.push(['','⚠️ تحذير: الرصيد '+fmt(B)]);
+ if(C>=s.maxCons)al.push(['bad','⛔ '+C+' خسائر متتالية']);else if(C>=2)al.push(['','⚠️ '+C+' خسائر متتالية']);
+ if(L2>=s.w2)al.push(['bad','⚠️ تنبيه شديد: خسارة اليوم '+fmt(L2)]);else if(L2>=s.w1)al.push(['','⚠️ تنبيه: خسارة اليوم '+fmt(L2)]);
+ $('alerts').innerHTML=al.map(x=>`<div class="al ${x[0]}">${esc(x[1])}</div>`).join('');
+ const n=nxt();$('nxA').textContent=fmt(n.a)+' ج.م';$('nxW').textContent=n.w;
+ const w=T.filter(t=>t.res==='win').length,l=T.filter(t=>t.res==='loss').length;
+ $('hT').textContent='سجل النتائج — '+(S.acc==='real'?'حساب حقيقي':'حساب تجريبي');
+ $('st').innerHTML=[['الصفقات',T.length],['فوز / خسارة',w+' / '+l],['معدل النجاح',w+l?(w/(w+l)*100).toFixed(1)+'%'+(w+l<30?' *':''):'—']].map(x=>`<div class="k"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('');
+ $('em0').classList.toggle('hide',T.length>0);
+ $('tb').innerHTML=T.slice().reverse().map(t=>`<tr><td>${t.n}</td><td>${esc(new Date(t.ts).toLocaleString('ar-EG',{dateStyle:'short',timeStyle:'short'}))}</td><td>${esc(t.market)}</td><td>${t.dir==='CALL'?'شراء':'بيع'}</td><td>${fmt(t.amt)}</td><td>${{win:'ربح',loss:'خسارة',draw:'تعادل'}[t.res]}</td><td class="${cls(t.pnl)}">${fmt(t.pnl)}</td><td>${fmt(t.bal)}</td><td>${t.cons}</td></tr>`).join('');
+ const p=S.pending;
+ if(p){$('sg').classList.remove('hide');const up=p.dir==='CALL',k=up?'CALL':'PUT';
+  $('sig').innerHTML=`<div class="mk">📈 ${esc(p.market)}</div><div class="mu" style="text-align:center;margin-bottom:4px">🧠 ${esc(p.model||'')}</div><div class="ow" id="ow"><div class="orb ${k}"><span class="ar">${up?'▲':'▼'}</span><b>${up?'شراء':'بيع'}</b></div></div><div class="pw"><span>قوة الإشارة</span><b>${p.power}%</b></div><div class="bar"><i style="--w:${p.power}%"></i></div><div class="cd" id="cdE"></div>`+
+  (p.ch?`<div class="fcw">${drawChart(p.ch,p.market)}</div>`:'<div class="mu" style="text-align:center">⚠️ تعذّر تأكيد قراءة الشموع من الصورة 1 — الرسم غير متاح</div>')+
+  `<div class="stp"><div><b>①</b><span>انتظر</span><small>افتتاح الشمعة</small></div><div><b>②</b><span>${up?'شراء ▲':'بيع ▼'}</span><small>${fmt(p.amt)} ج.م</small></div><div><b>③</b><span>5 دقائق</span><small>حتى الإغلاق</small></div></div><div class="row2"><button class="btn w" onclick="rec('win')">✅ ربح</button><button class="btn l" onclick="rec('loss')">❌ خسارة</button><button class="btn s" onclick="rec('draw')">↔️ تعادل / إلغاء</button><button class="btn s" onclick="skip()">🚫 لم أدخل</button></div>`+
+  (p.ch?`<div class="mu" style="text-align:center;margin-top:10px">آخر 3 شموع</div>${drawTri(p.ch,p.market,up)}`:'');
+  tick();if(fr){fr=false;burst(k)}}
+ else $('sg').classList.add('hide');
+}
+function rec(res){const p=S.pending;if(!p)return;const amt=p.amt,pnl=res==='win'?Math.round(amt*S.set.pay)/100:res==='loss'?-amt:0,T=A().trades;
+ const t={n:T.length+1,ts:Date.now(),market:p.market,dir:p.dir,amt,res,pnl,bal:0,cons:0};T.push(t);t.bal=Math.round(bal()*100)/100;t.cons=cons();S.pending=null;sv();render();if(res==='win')party()}
+function skip(){S.pending=null;sv();render()}
+function burst(k){const o=$('ow');if(!o)return;const c=k==='CALL'?'#34d399':'#fb7185';for(let i=0;i<18;i++){const e=document.createElement('i');e.className='bu';e.style.cssText='--a:'+i*20+'deg;--d:'+(95+Math.random()*50)+'px;--bc:'+(i%3?c:'#fbbf24');o.appendChild(e);setTimeout(()=>e.remove(),1000)}}
+function party(){const o=document.createElement('div');o.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:300;overflow:hidden';const em=['🎉','✨','💰','🔥','⭐'];for(let i=0;i<22;i++){const e=document.createElement('i');e.className='cf';e.textContent=em[i%5];e.style.cssText='left:'+Math.random()*100+'%;--x:'+(Math.random()*160-80)+'px;animation-delay:'+Math.random()*.4+'s';o.appendChild(e)}document.body.appendChild(o);setTimeout(()=>o.remove(),2200)}
+// clock
+const mmss=ms=>{const s=Math.max(0,Math.round(ms/1000));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+function tick(){const n=Date.now(),nb=Math.ceil((n+1)/TF)*TF,left=nb-n;$('clk').textContent=mmss(left);$('clkR').style.setProperty('--p',(TF-left)/TF*100);
+ const p=S.pending,e=$('cdE');if(p&&e){const l=p.target-n;
+  if(l>0){e.className='cd';e.textContent='⏳ الشمعة القادمة تفتح بعد '+mmss(l)}
+  else if(l>-25000){e.className='cd go';e.textContent='🚀 ادخل الآن — الشمعة بدأت!'}
+  else{e.className='cd late';e.textContent='⚠️ بدأت الشمعة من فترة — الإشارة قديمة، حلّل من جديد'}}}
+setInterval(tick,1000);
+// settings / reset / accounts
+function fillSet(){SK.forEach(k=>$('s_'+k).value=k==='bal0'?A().bal0:S.set[k])}
+$('se').innerHTML=SK.map(k=>`<div><label>${LB[k]}</label><input type="number" step="any" min="0" id="s_${k}"></div>`).join('');
+$('sv').onclick=()=>{const n={};for(const k of SK){const v=parseFloat($('s_'+k).value);if(!isFinite(v)||v<0||(k==='pay'&&v<=0)||(k==='base'&&v<=0)||(k==='bal0'&&v<=0)||(k==='mult'&&v<1)){$('sm').textContent='قيمة غير صالحة: '+LB[k];return}n[k]=v}
+ A().bal0=n.bal0;delete n.bal0;S.set=n;sv();$('sm').textContent='تم الحفظ ✅';render()};
+document.querySelectorAll('#acc button').forEach(b=>b.onclick=()=>{S.acc=b.dataset.a;sv();render();fillSet()});
+document.querySelectorAll('#lv button').forEach(b=>b.onclick=()=>{S.lvl=b.dataset.l;sv();render()});
+let rs=0;const RL='🔄 ريستارت (تصفير الحساب الحالي)';
+$('rst').onclick=()=>{const b=$('rst');if(!rs){rs=1;b.textContent='اضغط مرة أخرى للتأكيد — يُمسح سجل هذا الحساب فقط';setTimeout(()=>{rs=0;b.textContent=RL},4000);return}A().arch+=sum(A().trades);A().trades=[];rs=0;b.textContent=RL;sv();render()};
+let rf=0;const FL='⚠️ ضبط المصنع — يمسح كل شيء';
+$('fr').onclick=()=>{const b=$('fr');if(!rf){rf=1;b.textContent='اضغط مرة أخرى للتأكيد النهائي — سيُمسح كل شيء!';setTimeout(()=>{rf=0;b.textContent=FL},5000);return}
+ try{localStorage.removeItem(KEY)}catch(e){}S=fresh();F.fill(null);clearSlots();err('');rf=0;b.textContent=FL;fillSet();render();$('sm').textContent='تم ضبط المصنع ✅';$('go').disabled=true};
+// images
+const F=[null,null],err=m=>{$('err').textContent=m;$('err').classList.toggle('hide',!m)};
+$('sl').innerHTML=['الشارت 1 (5 دقائق) — الأساسي','الشارت 2 (سياق)'].map((t,i)=>`<label class="sl" id="s${i}"><span>${t}<br>＋ اضغط للرفع</span><input type="file" accept="image/*" data-i="${i}"></label>`).join('');
+function clearSlots(){[0,1].forEach(i=>{const s=$('s'+i);s.querySelector('img')?.remove();s.classList.remove('has');s.querySelector('input').value=''})}
+function shrink(f){return new Promise((ok,no)=>{const u=URL.createObjectURL(f),im=new Image();im.onload=()=>{const k=Math.min(1,1152/Math.max(im.width,im.height)),cv=document.createElement('canvas');cv.width=Math.round(im.width*k);cv.height=Math.round(im.height*k);cv.getContext('2d').drawImage(im,0,0,cv.width,cv.height);cv.toBlob(b=>b?ok({b,u:URL.createObjectURL(b)}):no(),'image/jpeg',.85);URL.revokeObjectURL(u)};im.onerror=()=>{URL.revokeObjectURL(u);no()};im.src=u})}
+document.querySelectorAll('.sl input').forEach(inp=>inp.onchange=async()=>{const i=+inp.dataset.i,f=inp.files[0];if(!f)return;err('');
+ if(!/^image\//.test(f.type)||f.size>20*1024*1024){err('ملف غير صالح (صورة حتى 20MB).');inp.value='';return}
+ try{const r=await shrink(f);F[i]=r.b;const s=$('s'+i);s.querySelector('img')?.remove();const im=new Image();im.src=r.u;s.prepend(im);s.classList.add('has')}catch(e){F[i]=null;err('تعذّر قراءة الصورة.')}
+ $('go').disabled=!(F[0]&&F[1])});
+// ---- analysis: ONE call per analysis (reads image 1 + forecasts the next 5-minute candle)
+const DEC=`You are the world's most rigorous price-action and technical analyst AND a precise chart reader. I am sending you 2 Pocket Option chart screenshots of the SAME market (Synthetic/OTC): image 1 is the PRIMARY 5-minute chart, image 2 gives context (another timeframe, a zoomed view or indicators).
+STEP 1 - READ image 1 literally. NEVER invent, smooth, copy or guess candles. The RIGHTMOST candle is the CURRENT candle, still forming; the candles to its left are closed. Extract the forming candle and up to 10 closed candles immediately to its left (fewer only if fewer are clearly visible), from oldest to newest, exactly as drawn. Each candle is an array [colour, high, bodyTop, bodyBottom, low]: colour is "g" for an UP candle or "r" for a DOWN candle (if the platform uses unusual colours, decide up/down by the chart's own convention); the four numbers are integer price levels on a 0-1000 scale measured on the chart's plot area (1000 = top edge of the plot area, 0 = bottom edge), so that high >= bodyTop >= bodyBottom >= low. If you cannot read the candles with confidence (hidden, cut off, covered), set "readable":false and give empty arrays: do NOT estimate them. Also read the asset name shown on the chart and, if a countdown timer is visible, the seconds left in the forming candle.
+STEP 2 - ANALYZE EVERYTHING VISIBLE in both images: candle bodies, wicks and closes; patterns in context (engulfing, pin bars, stars, inside bars, tweezers, soldiers/crows); market structure (HH/HL/LH/LL, break of structure / change of character); trend and its maturity; support/resistance, supply/demand, round numbers, trendlines/channels; chart patterns; Fibonacci pullbacks; momentum (body-size trend, acceleration or deceleration, consecutive candles); reversal strength (rejection wicks at levels, exhaustion, divergences); WHO CONTROLS the market (buyer vs seller dominance from body/wick ratios, close location inside the range, absorption, follow-through); volatility and overextension from the mean; and ANY indicators drawn on the chart (moving averages, RSI, MACD, Stochastic, Bollinger, volume) as confirmation. Weigh the confluence. Ignore photos, backgrounds, overlays and buttons. ANTI-CHASE: never decide just because recent candles share a color; a run into a key level with shrinking bodies or long wicks is exhaustion, an expanding run through a level that holds is continuation.
+STEP 3 - FORECAST FROM THE ANALYSIS ONLY: do not just continue the pattern of the previous candles. Derive how the forming candle will finish and the shape of the NEXT candle (the first full 5-minute candle that opens after the forming one closes; entry at its open, expiry at its close) - its body, close and its upper and lower WICKS - from the levels, momentum, rejection zones, volatility and structure: a wick forms where price is likely rejected (key levels, exhaustion) or where stops above or below recent highs and lows are swept. The last candle is UNFINISHED: judge how far it has progressed.
+STEP 4 - DECIDE: there is no neutral option; always give a direction, even when the edge is small (a p_up near 50 simply means a weak signal). p_up = probability (0-100) that the NEXT candle closes GREEN (above its open); direction is CALL if p_up >= 50 else PUT. power = strength of the signal 0-100 (50 = an average setup): how many independent factors agree, level quality, momentum clarity and image clarity.
+Return ONLY raw JSON, compact: {"readable":true|false,"asset":"name or unknown","rem":number|null,"closed":[["g",h,bt,bb,l],...],"forming":["r",h,bt,bb,l],"p_up":n,"power":n,"direction":"CALL"|"PUT","formEnd":[high,low,close],"next":[open,high,low,close],"support":n,"resistance":n}. formEnd is the forecast FINAL shape of the forming candle (its open stays the same; its high can only rise and its low can only fall from the current values; close = your forecast). next is the candle AFTER it, opening at formEnd's close, green if CALL and red if PUT, with its own wicks. All numbers use the same 0-1000 scale as the candles. If readable is false set formEnd, next, support and resistance to null (still give p_up, power and direction).`;
+const LV={max:{o:{model:MD,modelTier:'complex',effort:'high'},n:'🔥 أقوى'},bal:{o:{modelTier:'complex',effort:'medium'},n:'⚖️ متوازن'},fast:{o:{modelTier:'default',effort:'low'},n:'⚡ سريع'}};
+const ORDER=['max','bal','fast'];
+const HARD=['not_granted','session_expired','sampling_disabled','not_declared','capability_disabled','capability_removed','images_unavailable','image_rejected','prompt_too_large','invalid_request','cancelled','noimg'];
+function parseJ(r){if(!r||r.truncated)throw{code:'invalid_json'};const t=r.text||'';try{return JSON.parse(t)}catch(e){}const m=t.match(/\{[\s\S]*\}/);if(!m)throw{code:'invalid_json'};try{return JSON.parse(m[0])}catch(e){throw{code:'invalid_json'}}}
+const cdl=a=>{if(!Array.isArray(a)||a.length<5)return null;const g=a[0],h=+a[1],bt=+a[2],bb=+a[3],l=+a[4];if(![h,bt,bb,l].every(isFinite)||!(h>=bt&&bt>=bb&&bb>=l)||(g!=='g'&&g!=='r'))return null;const u=g==='g';return{g:u,h,l,o:u?bb:bt,c:u?bt:bb}};
+function readE(x){if(!x||x.readable===false)return null;const fm=cdl(x.forming),raw=Array.isArray(x.closed)?x.closed:[],cl=[];for(let i=raw.length-1;i>=0&&cl.length<10;i--){const c=cdl(raw[i]);if(!c)break;cl.unshift(c)}
+ if(!fm||cl.length<5)return null;
+ const seq=[...cl,fm],ar=cl.reduce((a,c)=>a+(c.h-c.l),0)/cl.length;if(!(ar>4))return null;
+ let good=0;for(let i=1;i<seq.length;i++)if(Math.abs(seq[i].o-seq[i-1].c)<=0.6*ar)good++;
+ if(good<(seq.length-1)*0.75)return null;
+ return{asset:String(x.asset||''),rem:x.rem!=null&&isFinite(+x.rem)?+x.rem:null,cl,fm}}
+function mk(E,x,dir){try{if(!E||!x)return null;const up=dir==='CALL',fe=x.formEnd,nx=x.next,num=(a,n)=>Array.isArray(a)&&a.length>=n&&a.slice(0,n).every(v=>v!==null&&v!==''&&isFinite(+v));
+ if(!num(fe,3)||!num(nx,4))return null;
+ const fm=E.fm,fc=+fe[2],f={g:fc>=fm.o,o:fm.o,c:fc,h:Math.max(fm.h,fm.o,fc,+fe[0]),l:Math.min(fm.l,fm.o,fc,+fe[1])};
+ const no=+nx[0],nh=+nx[1],nl=+nx[2],nc=+nx[3],body=Math.max(6,Math.abs(nc-no)),uw=Math.max(0,nh-Math.max(no,nc)),dw=Math.max(0,Math.min(no,nc)-nl),o=f.c,c=up?o+body:o-body;
+ const n={g:up,o,c,h:Math.max(o,c)+uw,l:Math.min(o,c)-dw},sp=+x.support,rs=+x.resistance;
+ return{cl:E.cl,g:fm,f,n,s:x.support!=null&&isFinite(sp)?sp:null,r:x.resistance!=null&&isFinite(rs)?rs:null}}catch(e){return null}}
+const cl100=v=>Math.min(100,Math.max(0,+v));
+async function analyze(sample,imgs,lvl,step){
+ const lim=typeof sample.limits==='function'?await sample.limits().catch(()=>null):null;
+ if(!lim||!lim.images)throw{code:'noimg'};
+ imgs=imgs.slice(0,lim.images.maxCount||2);
+ const chain=ORDER.slice(Math.max(0,ORDER.indexOf(lvl)));let last=null,res=null,used=null;
+ for(const L of chain){step(LV[L].n);try{const r=await sample(DEC,{images:imgs,cache:false,...LV[L].o}),x=parseJ(r);if(!isFinite(+x.p_up))throw{code:'invalid_json'};res={x,r};used=L;break}catch(e){last=e;if(!e||HARD.includes(e.code))throw e}}
+ if(!res)throw last||{code:'parse'};
+ const x=res.x,P=cl100(x.p_up),dir=P>=50?'CALL':'PUT',E=readE(x),ma=res.r.modelApplied?String(res.r.modelApplied):'',act=ma?(/fable/i.test(ma)?'Fable 5.1':ma):(res.r.modelTierApplied||'');
+ const mkt=(E&&E.asset&&E.asset!=='unknown'?E.asset:(x.asset&&x.asset!=='unknown'?x.asset:''))||'غير محدد';
+ return{dir,P,power:isFinite(+x.power)?Math.round(cl100(x.power)):50,market:String(mkt),ch:mk(E,x,dir),readable:!!E,used,model:LV[used].n+(act?' · '+act:'')+(used!==lvl?' (نزل تلقائيًا)':'')}}
+const MSG={outside:'الموقع يعمل بشكل مستقل، لكن التحليل الذكي يحتاج ربط نموذج عبر خادم آمن. لم يتم توليد إشارة وهمية.',noimg:'إرسال الصور غير متاح في هذه البيئة.',not_granted:'لم تُمنح صلاحية Claude للتحليل. وافق على الطلب ثم أعد المحاولة.',rate_limited:'وصل حد الاستخدام في حسابك على Claude (أو حد الطلبات). ده حد من الحساب مش عطل في التطبيق، وبيتجدد مع الوقت. جرّب مستوى ⚡ سريع، أو أعد المحاولة بعد التجديد.',session_expired:'انتهت الجلسة. سجّل الدخول من جديد.',sampling_disabled:'Claude غير متاح لهذا الحساب.',image_rejected:'الصورة مرفوضة (النوع أو الحجم). جرّب صورة أخرى.',images_unavailable:'إرسال الصور غير متاح.',invalid_json:'رد التحليل غير مكتمل. أعد المحاولة.',empty_completion:'لم يصل رد. أعد المحاولة.',parse:'لم يصل رد صالح. أعد المحاولة.',upstream_error:'مشكلة مؤقتة في الاتصال. أعد المحاولة.',refused:'تعذّر تحليل هذه الصور. جرّب صورًا أوضح.'};
+let busy=false;
+$('go').onclick=async()=>{if(busy)return;busy=true;err('');const t0=Date.now(),target=Math.ceil((t0+1)/TF)*TF;$('scan').classList.add('on');$('go').disabled=true;
+ const MS=['قراءة الشموع من الصورة 1…','تحليل الزخم والمؤشرات…','قياس قوة المشترين والبائعين…','فحص الانعكاس والدعم والمقاومة…','توقع الشمعة القادمة…'];let si=0;$('scT').textContent=MS[0];const bz=setInterval(()=>{si=(si+1)%MS.length;$('scT').textContent=MS[si]},2600);
+ try{
+  if(typeof claude==='undefined')throw{code:'outside'};
+  const sample=await claude.use('sample');if(!sample)throw{code:'outside'};
+  const r=await analyze(sample,F.filter(Boolean),S.lvl,()=>{});
+  S.pending={dir:r.dir,P:r.P,power:r.power,market:r.market,ch:r.ch,readable:r.readable,model:r.model,amt:nxt().a,ts:Date.now(),target};fr=true;sv();render();$('sg').scrollIntoView({behavior:'smooth'});
+ }catch(e){S.pending=null;sv();render();const c=e&&e.code||'upstream_error';err((MSG[c]||'فشل التحليل. أعد المحاولة.')+' ['+c+']')}
+ clearInterval(bz);busy=false;$('scan').classList.remove('on');$('go').disabled=!(F[0]&&F[1])};
+// UI: tabs, ripple, background
+document.querySelectorAll('.tb').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tb').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.id===b.dataset.t));scrollTo({top:0,behavior:'smooth'})});
+document.addEventListener('pointerdown',e=>{const t=e.target.closest('.btn,.tb,.tl,.seg button,.sl');if(!t)return;const r=t.getBoundingClientRect(),s=document.createElement('span'),z=Math.max(r.width,r.height)*2;s.className='rp';s.style.cssText='width:'+z+'px;height:'+z+'px;left:'+(e.clientX-r.left-z/2)+'px;top:'+(e.clientY-r.top-z/2)+'px';t.appendChild(s);setTimeout(()=>s.remove(),650);navigator.vibrate&&navigator.vibrate(12)});
+(()=>{const b=$('bars'),cs=['#34d399','#fb7185'];for(let i=0;i<10;i++){const e=document.createElement('i');e.style.cssText='--h:'+(30+Math.random()*70)+'%;--s:'+(1.2+Math.random()*2.5)+'s;--k:'+cs[Math.random()<.55?0:1]+';animation-delay:-'+Math.random()*3+'s';b.appendChild(e)}
+ const g=$('bgf'),pc=['#22d3ee','#e879f9','#a3e635','#fbbf24'];for(let i=0;i<8;i++){const e=document.createElement('i');e.className='pt';e.style.cssText='left:'+Math.random()*100+'%;--z:'+(3+Math.random()*5)+'px;--s:'+(8+Math.random()*10)+'s;--x:'+(Math.random()*60-30)+'px;--k:'+pc[i%4]+';animation-delay:-'+Math.random()*12+'s';g.appendChild(e)}})();
+document.addEventListener('visibilitychange',()=>document.body.classList.toggle('ps',document.hidden));
+// splash + gate
+$('spb').onclick=()=>{$('spl').classList.add('out');setTimeout(()=>{$('spl').style.display='none'},700)};setTimeout(()=>$('spb').click(),5000);
+// Standalone mode: dashboard, settings and local history run without a Claude session.
+fillSet();render();tick();
+</script>
+</body>
+</html>
